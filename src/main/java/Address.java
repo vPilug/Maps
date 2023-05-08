@@ -1,11 +1,11 @@
 import java.util.Objects;
 
-public class Adress {
+public class Adresses {
     private String streetName;
     private String streetNumber;
     private String country;
 
-    public Adress(String streetName, String streetNumber, String country) {
+    public Adresses(String streetName, String streetNumber, String country) {
         this.streetName = streetName;
         this.streetNumber = streetNumber;
         this.country = country;
@@ -36,7 +36,7 @@ public class Adress {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Adress adress = (Adress) o;
+        Adresses adress = (Adresses) o;
         return country.equals(adress.country);
     }
 
