@@ -1,15 +1,15 @@
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Hobby {
     private String name;
     private int frequency;
-    List<Adress> adress = new ArrayList<Adress>();
+    List<Address> addresses;
 
-    public Hobby(String name, int frequency, List<Adress> adress) {
+    public Hobby(String name, int frequency, List<Address> addresses) {
         this.name = name;
         this.frequency = frequency;
-        this.adress = adress;
+        this.addresses = Collections.unmodifiableList(addresses);
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Hobby {
         return "Hobby{" +
                 "name='" + name + '\'' +
                 ", frequency=" + frequency +
-                ", adress=" + adress +
+                ", addresses=" + addresses +
                 '}';
     }
 
@@ -29,8 +29,8 @@ public class Hobby {
         return frequency;
     }
 
-    public List<Adress> getAdress() {
-        return adress;
+    public List<Address> getAddress() {
+        return addresses;
     }
 
 }

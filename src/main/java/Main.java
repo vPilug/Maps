@@ -30,48 +30,48 @@ public class Main {
         }
         System.out.println("__________");
 
-        Adress adress1 = new Adress("Donath", "12", "Romania");
-        Adress adress2 = new Adress("Pierre Cardine", "42", "Franta");
-        List<Adress> adressesListWorkout = new ArrayList<>();
-        adressesListWorkout.add(adress1);
-        adressesListWorkout.add(adress2);
+        Address address1 = new Address("Donath", "12", "Romania");
+        Address address2 = new Address("Pierre Cardine", "42", "Franta");
+        List<Address> addressesListWorkout = new ArrayList<>();
+        addressesListWorkout.add(address1);
+        addressesListWorkout.add(address2);
 
         Map<Person, List<Hobby>> hobbies = new HashMap<>();
 
-        Hobby workout = new Hobby("workout", 3, adressesListWorkout);
+        Hobby workout = new Hobby("workout", 3, addressesListWorkout);
         List<Hobby> hobbiesListVero = new ArrayList<>();
         hobbiesListVero.add(workout);
         hobbies.put(vero, hobbiesListVero);
 
-        Adress adressDancing1 = new Adress("Sante", "1", "Spania");
-        Adress adressDancing2 = new Adress("Mangus", "2A", "Portugalia");
-        List<Adress> adressListDancing = new ArrayList<>();
-        adressListDancing.add(adressDancing1);
-        adressListDancing.add(adressDancing2);
+        Address addressDancing1 = new Address("Sante", "1", "Spania");
+        Address addressDancing2 = new Address("Mangus", "2A", "Portugalia");
+        List<Address> addressListDancing = new ArrayList<>();
+        addressListDancing.add(addressDancing1);
+        addressListDancing.add(addressDancing2);
 
-        Hobby dancing = new Hobby("dancing", 2, adressListDancing);
+        Hobby dancing = new Hobby("dancing", 2, addressListDancing);
         hobbiesListVero.add(dancing);
         hobbies.put(vero, hobbiesListVero);
 
-        Adress adressRunning1 = new Adress("Stevens Ave", "3", "USA");
-        Adress adressRunning2 = new Adress("Provinciale", "9", "Italia");
+        Address addressRunning1 = new Address("Stevens Ave", "3", "USA");
+        Address addressRunning2 = new Address("Provinciale", "9", "Italia");
 
-        List<Adress> adressListRunning = new ArrayList<>();
-        adressListRunning.add(adressRunning1);
-        adressListRunning.add(adressRunning2);
+        List<Address> addressListRunning = new ArrayList<>();
+        addressListRunning.add(addressRunning1);
+        addressListRunning.add(addressRunning2);
 
-        Hobby running = new Hobby("running", 2, adressListRunning);
+        Hobby running = new Hobby("running", 2, addressListRunning);
         List<Hobby> hobbiesListOana = new ArrayList<>();
         hobbiesListOana.add(running);
         hobbies.put(oana, hobbiesListOana);
 
-        Adress adressSwimming1 = new Adress("Stevens Ave", "3", "USA");
-        Adress adressSwimming2 = new Adress("Provinciale", "9", "Italia");
-        List<Adress> adressListSwimming = new ArrayList<>();
-        adressListSwimming.add(adressSwimming1);
-        adressListSwimming.add(adressSwimming2);
+        Address addressSwimming1 = new Address("Stevens Ave", "3", "USA");
+        Address addressSwimming2 = new Address("Provinciale", "9", "Italia");
+        List<Address> addressListSwimming = new ArrayList<>();
+        addressListSwimming.add(addressSwimming1);
+        addressListSwimming.add(addressSwimming2);
 
-        Hobby swimming = new Hobby("swimming", 3, adressListSwimming);
+        Hobby swimming = new Hobby("swimming", 3, addressListSwimming);
         List<Hobby> hobbyListOana2 = new ArrayList<>();
         hobbyListOana2.add(swimming);
         hobbies.put(oana2, hobbyListOana2); // "oana2" will override "oana" key because both have the same name and age
@@ -80,10 +80,10 @@ public class Main {
             List<Hobby> hobbyList = entry.getValue();
             System.out.println(entry.getKey().getName());
             for (Hobby hobby: hobbyList) {
-                List<Adress> adressList = hobby.getAdress();
+                List<Address> addressList = hobby.getAddress();
                 System.out.print("Hobby: " + hobby.getName() + " | Countries: ");
-                for(Adress adress: adressList){
-                    System.out.print(adress.getCountry() + " ");
+                for(Address address: addressList){
+                    System.out.print(address.getCountry() + " ");
                 }
                 System.out.println("");
             }
